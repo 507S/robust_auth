@@ -1,5 +1,10 @@
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import PasswordRecoveryMailForOTPLayout from "./components/auth/PasswordRecoveryMailForOTPLayout";
 import LoginPage from "./pages/auth/LoginPage";
+import RegisterPage from "./pages/auth/RegisterPage";
+import PageNotFound from "./pages/error/PageNotFound";
+import PasswordRecoveryMailForOTPPage from "./pages/auth/PasswordRecoveryMailForOTPPage";
+import PasswordRecoveryOTPPage from "./pages/auth/PasswordRecoveryOTPPage";
 
 function App() {
   return (
@@ -27,6 +32,17 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<LoginPage />} />
+          <Route path="/register" element={<RegisterPage />} />
+          <Route
+            path="/password-recovery"
+            element={<PasswordRecoveryMailForOTPPage />}
+          />
+          <Route
+            path="/otp-verification"
+            element={<PasswordRecoveryOTPPage />}
+          />
+
+          <Route path="*" element={<PageNotFound />} />
         </Routes>
       </Router>
     </>

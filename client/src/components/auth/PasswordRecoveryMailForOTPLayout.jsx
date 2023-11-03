@@ -3,14 +3,12 @@ import React, { useState } from "react";
 import "../../styles/LoginDesign.css";
 import { NavLink } from "react-router-dom";
 
-
-export default function LoginLayout() {
-
-const [email, setEmail] = useState("");
-const [password, setPassword] = useState("");
-const [emailError, setEmailError] = useState("");
+export default function PasswordRecoveryMailForOTPLayout() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
-  
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -100,7 +98,6 @@ const [emailError, setEmailError] = useState("");
     setPasswordError("");
   };
 
-
   return (
     <div className="container-fluid">
       <div className="row no-gutter">
@@ -111,7 +108,7 @@ const [emailError, setEmailError] = useState("");
             <div className="container">
               <div className="row">
                 <div className="col-lg-10 col-xl-7 mx-auto">
-                  <h3 className="display-4">Login</h3>
+                  <h3 className="display-5">Mail Verification</h3>
                   <p className="text-muted mb-4">
                     {/* Create a login split page using Bootstrap 4. */}
                   </p>
@@ -131,25 +128,7 @@ const [emailError, setEmailError] = useState("");
                         <p className="text-danger m-1">{emailError}</p>
                       )}
                     </div>
-                    <div className="form-group mb-3">
-                      <input
-                        id="inputPassword"
-                        type="password"
-                        placeholder="Password"
-                        required=""
-                        className="form-control rounded-pill border-1 shadow-sm px-4 py-2"
-                        value={password}
-                        onChange={handlePasswordChange}
-                      />
-                      {passwordError && (
-                        <p
-                          className="text-danger m-1"
-                          style={{ fontSize: "12px" }}
-                        >
-                          {passwordError}
-                        </p>
-                      )}
-                    </div>
+
                     {/* <div className="custom-control custom-checkbox mb-3">
                       <input
                         id="customCheck1"
@@ -164,40 +143,23 @@ const [emailError, setEmailError] = useState("");
                         &nbsp;Remember password
                       </label>
                     </div> */}
-                    <div
-                      className="text-center d-flex justify-content-between mt-3"
-                      style={{ textAlign: "center" }}
-                    >
-                      <p style={{ fontSize: "14px" }}>
-                        <NavLink
-                          to="/password-recovery"
-                          className="font-italic text-muted"
-                          style={{ textDecoration: "none" }}
-                        >
-                          <u>Forgot Password?</u>
-                        </NavLink>
-                      </p>
-                    </div>
+
                     <div>
                       <button
                         type="submit"
                         className="btn btn-primary btn-block text-uppercase mb-2 rounded-pill shadow-sm w-100"
                       >
-                        Login in &nbsp;
-                        <i className="fa fa-sign-in" aria-hidden="true"></i>
+                        Send OTP &nbsp;
+                        <i className="fa fa-paper-plane" aria-hidden="true"></i>
                       </button>
                     </div>
                     <div
-                      className="text-center d-flex justify-content-between mt-3"
+                      className="text-center d-flex justify-content-between mt-1"
                       style={{ textAlign: "center" }}
                     >
                       <p>
-                        Don't have an account?
-                        <NavLink
-                          to="/register"
-                          className="font-italic text-muted"
-                        >
-                          <u>&nbsp;Register</u>
+                        <NavLink to="/" className="font-italic text-muted">
+                          <u>&nbsp;Go Back?</u>
                         </NavLink>
                       </p>
                     </div>
